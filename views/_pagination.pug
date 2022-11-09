@@ -1,0 +1,25 @@
+mixin paginate(page)
+    <ul class="pagination">
+        if page===undefined
+            h3 No more results. Go to start! &nbsp;
+            li.page-item
+                a.page-link(href=`?page=1&limit=10`) Start
+        else if page===1
+            li.page-item
+                a.page-link(href=`?page=${page+1}&limit=10`) #{page+1}
+            li.page-item
+                a.page-link(href=`?page=${page+2}&limit=10`) #{page+2}
+            li.page-item
+                a.page-link(href=`?page=${page+3}&limit=10`) #{page+3}
+            li.page-item
+                a.page-link(href=`?page=${page+1}&limit=10`) Next
+        else 
+            li.page-item
+                a.page-link(href=`?page=${page-1}&limit=10`) Previous</a></li>
+            li.page-item
+                a.page-link(href=`?page=${page+1}&limit=10`) #{page+1}</a></li>
+            li.page-item
+                a.page-link(href=`?page=${page+2}&limit=10`) #{page+2}</a></li>
+            li.page-item
+                a.page-link(href=`?page=${page+1}&limit=10`) Next</a></li>
+    </ul>

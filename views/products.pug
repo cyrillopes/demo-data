@@ -1,0 +1,40 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous")
+
+        title
+    style(type="text/css").
+        body {
+            margin:5rem 20% auto;
+        }
+    style(type="text/css").
+        .card {
+            margin-bottom: 5%
+        }
+    body   
+        include _pagination
+        <nav aria-label="Page navigation example">
+        
+            +paginate(pageNo)
+        </nav>
+        each item in products
+           .card
+               .card-header Product Id: #{item._id}
+                    
+               .card-body
+                    h5.card-title Product Name: #{item.prodName}
+                    p.card-text Product Description: #{item.description}
+                    p.card-text Category Id: #{item.category._id}
+                    p.card-text Category Name: #{item.category.categoryName}
+        
+
+
+
+
+
+
+
